@@ -1,26 +1,149 @@
-/* Make sure abstract does not disply by default*/
-.abstract{
-	font-family: "Gill Sans", sans-serif;
-    display:none;
+/* ----------------- Publications ----------------- */
+
+.pub-note {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  margin: -6px 0 14px;
+  line-height: 1.55;
 }
 
-.author-me {
-    font-weight: 400;
-    color: #577492;
+.pub-section {
+  margin-top: 4px;
+}
+
+.publication {
+  width: 100%;
+  margin: 0 0 14px 0;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.publication:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.pubtitle {
+  font-weight: 600;
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.45;
+  display: inline;
+}
+
+.author-list {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  display: inline-block;
+  margin-top: 6px;
 }
 
 .author-list-long {
-    font-size: 15px;
+  font-size: 13.5px;
 }
 
-.bibtex{
-	font-family: "Gill Sans", sans-serif;
-    display:none;
+.author-me {
+  font-weight: 600;
+  color: var(--accent);
 }
 
-.publication{
-	width:100%;
-	margin-bottom: 28px;
+.venue {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 2px 9px;
+  border-radius: 4px;
+  margin-top: 6px;
+  letter-spacing: 0.01em;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.venuetype {
+  display: none;
+}
+
+.links.btn-group {
+  margin-top: 10px;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.links.btn-group .btn-pub {
+  border-radius: 5px !important;
+  margin: 0 !important;
+}
+
+.btn-pub {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  padding: 3px 10px;
+  letter-spacing: 0.01em;
+  transition: all 0.12s ease;
+  border-radius: 5px;
+}
+
+.btn-pub i {
+  margin-right: 4px;
+  color: var(--text-soft);
+  transition: color 0.12s ease;
+}
+
+.btn-pub:hover {
+  color: var(--surface);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-pub:hover i {
+  color: var(--surface);
+}
+
+.btn-pub:focus,
+.btn-pub:active {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.publication pre {
+  font-size: 12px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  color: var(--text-muted);
+}
+
+.abstract {
+  font-family: inherit;
+  display: none;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: var(--surface-soft);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+}
+
+.bibtex {
+  font-family: inherit;
+  display: none;
 }
 
 .details-panel {
@@ -30,48 +153,14 @@
   font-size: 12px;
 }
 
-.details-panel ul {
-  margin: 0px;
-  border: 0px;
-  padding: 2px;
-  font-size: 12px;
-}
-
-.details-panel li {
-  margin: 0px;
-  border: 0px;
-  padding: 2px;
-  font-size: 12px;
-}
-
-.btn-pub {
-  border-color: #BEBEBE;
-  -webkit-transition-duration: 0.05s; /* Safari */
-  transition-duration: 0.05s;
-}
-
-.btn-pub:hover {
-  color: #FFFFFF;
-  background-color: #606060;
-}
-
-.links {
-  margin-left: 0px;
-  margin-top: 6px;
-}
-
-@media print, screen and (max-width: 768px) {
-  .author-me {
-    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@media (max-width: 767px) {
+  .publication {
+    padding: 14px 14px;
   }
-
+  .pubtitle {
+    font-size: 14.5px;
+  }
   .author-list {
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-  }
-
-  .venue {
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-size: 13px;
   }
 }
