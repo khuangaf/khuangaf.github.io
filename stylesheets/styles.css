@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #fdfdfc;
+  --bg: #fbfbfa;
   --surface: #ffffff;
-  --surface-soft: #f6f6f4;
-  --border: #e8e6e1;
-  --border-strong: #d8d5cf;
+  --surface-soft: #f5f7f8;
+  --border: #e5e8eb;
+  --border-strong: #cfd7df;
   --text: #1c1c1a;
   --text-muted: #5a5a55;
   --text-soft: #7a7a73;
   --accent: #2f5d8a;
   --accent-soft: #eaf1f8;
   --accent-strong: #1f4366;
-  --accent-warm: #b85c38;
+  --accent-warm: #9d5f38;
   --shadow-sm: 0 1px 2px rgba(15, 15, 15, 0.04);
-  --shadow-md: 0 4px 16px rgba(15, 15, 15, 0.06);
+  --shadow-md: 0 10px 28px rgba(25, 38, 52, 0.08);
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
 }
 
 * {
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  padding: 56px 0 80px 0;
+  padding: 48px 0 72px 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.65;
@@ -41,8 +41,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 10;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
 .page {
-  max-width: 760px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -50,40 +66,50 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text);
   font-family: 'Inter', -apple-system, sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.25;
 }
 
 h1 {
   font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin: 0 0 14px 0;
   color: var(--text);
   line-height: 1.2;
 }
 
 h3 {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
   font-weight: 600;
-  margin: 0 0 18px 0;
+  margin: 0 0 20px 0;
   color: var(--text);
   position: relative;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+h3:after {
+  content: "";
+  height: 1px;
+  flex: 1 1 auto;
+  background: var(--border);
 }
 
 h4 {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 28px 0 14px;
-  padding-bottom: 4px;
-  border-bottom: 1px dashed var(--border);
+  margin: 30px 0 12px;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 p, ul, ol, table, pre, dl {
@@ -106,6 +132,11 @@ a {
 a:hover {
   color: var(--accent-strong);
   border-bottom-color: var(--accent-strong);
+}
+
+a:focus {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
 }
 
 strong {
@@ -145,9 +176,9 @@ hr {
 .hero {
   display: flex;
   align-items: center;
-  gap: 28px;
-  padding: 8px 0 36px 0;
-  margin-bottom: 36px;
+  gap: 32px;
+  padding: 10px 0 34px 0;
+  margin-bottom: 42px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -156,12 +187,13 @@ hr {
 }
 
 .hero-photo img {
-  width: 128px;
-  height: 128px;
+  width: 136px;
+  height: 136px;
   object-fit: cover;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   display: block;
+  box-shadow: 0 0 0 7px var(--surface), var(--shadow-md);
 }
 
 .hero-text {
@@ -176,12 +208,12 @@ hr {
 .english-name {
   font-family: 'Source Serif 4', Georgia, serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .hero-role {
-  margin: 0 0 10px 0;
-  font-size: 15.5px;
+  margin: 0 0 12px 0;
+  font-size: 16px;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -198,8 +230,8 @@ hr {
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
-  margin: 0 0 12px 0;
+  gap: 7px 18px;
+  margin: 0 0 16px 0;
   font-size: 13.5px;
   color: var(--text-muted);
 }
@@ -219,13 +251,33 @@ hr {
 
 .hero-socials {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 }
 
+.hero-socials a {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.hero-socials a:hover {
+  border-bottom-color: var(--border-strong);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
 .btn-svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   filter: invert(35%) sepia(15%) saturate(640%) hue-rotate(170deg) brightness(95%) contrast(85%);
   transition: filter 0.15s ease, transform 0.15s ease;
 }
@@ -257,8 +309,12 @@ hr {
   font-size: 12px;
 }
 
+.page-footer:empty {
+  display: none;
+}
+
 .section {
-  margin-bottom: 44px;
+  margin-bottom: 46px;
 }
 
 .section h3 a.anchor {
@@ -269,6 +325,10 @@ hr {
 .section li {
   font-size: 15.5px;
   color: var(--text);
+}
+
+.section > p {
+  max-width: 74ch;
 }
 
 /* News list */
@@ -311,7 +371,7 @@ hr {
   border-radius: 4px;
   margin-right: 8px;
   white-space: nowrap;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 /* Service section */
@@ -360,7 +420,7 @@ hr {
   font-size: 12px;
   color: var(--text-soft);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   padding: 6px 12px;
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -456,14 +516,14 @@ hr {
 
 @media (max-width: 768px) {
   body {
-    padding: 24px 0 40px 0;
+    padding: 26px 0 42px 0;
     font-size: 15.5px;
   }
   .page {
     padding: 0 20px;
   }
   h1 {
-    font-size: 22px;
+    font-size: 25px;
   }
   h3 {
     font-size: 18px;
@@ -472,12 +532,12 @@ hr {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
-    padding: 4px 0 28px 0;
-    margin-bottom: 28px;
+    padding: 6px 0 30px 0;
+    margin-bottom: 34px;
   }
   .hero-photo img {
-    width: 96px;
-    height: 96px;
+    width: 104px;
+    height: 104px;
   }
   .hero-meta {
     flex-direction: column;

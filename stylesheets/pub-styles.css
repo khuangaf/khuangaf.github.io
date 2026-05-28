@@ -3,7 +3,7 @@
 .pub-note {
   font-size: 13.5px;
   color: var(--text-soft);
-  margin: -6px 0 14px;
+  margin: -6px 0 18px;
   line-height: 1.55;
 }
 
@@ -13,8 +13,8 @@
 
 .publication {
   width: 100%;
-  margin: 0 0 14px 0;
-  padding: 16px 18px;
+  margin: 0 0 12px 0;
+  padding: 15px 17px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -25,11 +25,12 @@
 .publication:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .pubtitle {
   font-weight: 600;
-  font-size: 15.5px;
+  font-size: 15.75px;
   color: var(--text);
   line-height: 1.45;
   display: inline;
@@ -61,7 +62,7 @@
   padding: 2px 9px;
   border-radius: 4px;
   margin-top: 6px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
@@ -70,11 +71,11 @@
 }
 
 .links.btn-group {
-  margin-top: 10px;
+  margin-top: 11px;
   margin-left: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
 }
 
 .links.btn-group .btn-pub {
@@ -87,12 +88,13 @@
   font-weight: 500;
   font-family: 'Inter', sans-serif;
   color: var(--text-muted);
-  background: var(--surface);
+  background: var(--surface-soft);
   border: 1px solid var(--border-strong);
-  padding: 3px 10px;
-  letter-spacing: 0.01em;
+  padding: 4px 10px;
+  letter-spacing: 0;
   transition: all 0.12s ease;
   border-radius: 5px;
+  box-shadow: none;
 }
 
 .btn-pub i {
